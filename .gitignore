@@ -6,3 +6,4 @@
 staticfiles/
 mediafiles/
 postgres/data/
+pylintrc
