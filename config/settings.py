@@ -23,6 +23,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
     'api',
     'users',
 ]
@@ -113,3 +117,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 
 # Extend User
 AUTH_USER_MODEL = 'users.CustomUser'
+
+# Auth
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
