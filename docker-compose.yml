@@ -1,14 +1,14 @@
 version: "3"
 services:
   web:
-    build: .
+    build: ./backend/
     restart: on-failure
     env_file:
       - ./.env
       - ./.env.secret
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/www
+      - ./backend/:/www
     ports:
       - "8000:8000"
     depends_on:
