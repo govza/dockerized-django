@@ -7,3 +7,4 @@ staticfiles/
 mediafiles/
 postgres/data/
 pylintrc
+frontend/node_modules

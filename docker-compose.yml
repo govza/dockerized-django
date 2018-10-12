@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  backend:
     build: ./backend/
     restart: on-failure
     env_file:
@@ -29,6 +29,19 @@ services:
       - "8080:8080"
     env_file:
       - ./.env.secret
+  frontend:
+    environment:
+      - HOST=0.0.0.0
+    build: ./frontend/
+    command: npm run dev
+    volumes:
+      - ./frontend:/www/frontend
+      - /www/frontend/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
 volumes:
   postgres:
     external: true
+  node-modules:
